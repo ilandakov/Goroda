@@ -3,8 +3,7 @@ from opencage.geocoder import OpenCageGeocode
 def get_coordinates(sity, key):
     try:
         geocoder = OpenCageGeocode(key)
-        query = city
-        results = geocoder.geocode(query)
+        results = geocoder.geocode(sity, language='ru')
         if results:
             return results[0]['geometry']['lat'], results[0]['geometry']['lng']
         else:
